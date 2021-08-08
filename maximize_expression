@@ -1,3 +1,5 @@
+https://codeforces.com/problemset/problem/855/B
+
 Value of x is calculated as maximum of p·ai + q·aj + r·ak for given p, q, r and array a1, a2, ... an such that 1 ≤ i ≤ j ≤ k ≤ n. Help Snape find the value of x. Do note that the value of x may be negative.
 
 Input
