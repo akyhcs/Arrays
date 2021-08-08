@@ -14,3 +14,57 @@ Next line of input contains n space separated integers a1, a2, ... an ( -�
           + Positive(PQR)*max_element||Positive(PQR)*max_element
           + Positive(PQR)*max_element||Positive(PQR)*max_element
           
+ class MaximizeExpression
+{
+	public int calculateMaximumExpression(int PQR[],int arr[])
+	{
+		int max_expression = 0;
+		int countNegative  = countTotalNegativeElementPQR(PQR);
+		int negativePQR[] = new int[countNegative];
+		int positivePQR[] = new int[PQR.length-countNegative];
+		int minElement = getMin(arr);
+		int maxElement = getMAx(arr);
+		for(int i =0 ;i<negativePQR.length;i++)
+		{
+			max_expression = max_expression + negativePQR[i]*minElement;
+		}
+		for(int i  = 0 ;i<positivePQR.length;i++)
+		{
+			max_expression = max_expression + positivePQR[i]*max_expression;
+		}
+		return max_expression;
+		
+	}
+
+	private int getMAx(int[] arr) {
+		int max = Integer.MIN_VALUE;
+		for(int i = 0;i<arr.length;i++)
+		{
+			if(max<arr[i])
+				max = arr[i];
+		}
+		return max;
+	}
+
+	private int getMin(int[] arr) {
+		int min = Integer.MAX_VALUE;
+		for(int  i = 0 ;i<arr.length;i++)
+		{
+			if(min>arr[i])
+				min = arr[i];
+		}
+		return min;
+	}
+
+	private int countTotalNegativeElementPQR(int[] pQR) {
+		int c = 0 ;
+		for(int  i =0;i<pQR.length;i++)
+		{
+			if(pQR[i]<0)
+				c=c+1;
+		}
+		return 0;
+	}
+}
+         
+          
