@@ -1,0 +1,12 @@
+		//min<=0<=max
+		//not necessary that absolute value of min and max will be same
+		//given an inclusive value(k belongs min,min-1.....max) between max and min find the index of the value(k)
+		int min = -2;
+		int max = 1;
+		int arr[] = new int[max+Math.abs(min)+1];//adding 1 for including zero
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i] = min+i;
+		}
+		//to find the index of given value k index = abs(min)+k
+		//return index
